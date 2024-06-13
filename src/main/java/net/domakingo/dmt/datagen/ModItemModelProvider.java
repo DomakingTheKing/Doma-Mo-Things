@@ -19,7 +19,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         withExistingParent(ModItems.SNAIL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-        simpleItem(ModItems.SHELL);
+        simpleItem(ModItems.SNAIL_SHELL_FRAGMENT);
         simpleItem(ModItems.HORN_SHELL);
     }
 
