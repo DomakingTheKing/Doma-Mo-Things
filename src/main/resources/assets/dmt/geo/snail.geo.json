@@ -1,0 +1,302 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.snail",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "Body",
+					"pivot": [0, 8, 0]
+				},
+				{
+					"name": "Main",
+					"parent": "Body",
+					"pivot": [1, 0, -1],
+					"cubes": [
+						{
+							"origin": [-2, 0, -6],
+							"size": [4, 2.5, 12],
+							"uv": {
+								"north": {"uv": [20.1, 16.1], "uv_size": [3.8, 2.8]},
+								"east": {"uv": [8.1, 16.1], "uv_size": [11.8, 2.8]},
+								"south": {"uv": [20.1, 19.1], "uv_size": [3.8, 2.8]},
+								"west": {"uv": [8.1, 19.1], "uv_size": [11.8, 2.8]},
+								"up": {"uv": [0.1, 16.1], "uv_size": [3.8, 11.8]},
+								"down": {"uv": [4.1, 27.9], "uv_size": [3.8, -11.8]}
+							}
+						}
+					]
+				},
+				{
+					"name": "Eyes",
+					"parent": "Body",
+					"pivot": [0, 8, 0]
+				},
+				{
+					"name": "LeftEye",
+					"parent": "Eyes",
+					"pivot": [0, 8, 0]
+				},
+				{
+					"name": "LeftAntenna",
+					"parent": "LeftEye",
+					"pivot": [1.85, 1.75, -6.5],
+					"cubes": [
+						{
+							"origin": [0.85, 1.75, -5.5],
+							"size": [0.25, 2.5, 0.25],
+							"pivot": [1.85, 1.75, -6.5],
+							"rotation": [22.5, 0, 0],
+							"uv": {
+								"north": {"uv": [16.1, 22.1], "uv_size": [0.8, 2.8]},
+								"east": {"uv": [17.1, 22.1], "uv_size": [0.8, 2.8]},
+								"south": {"uv": [18.1, 22.1], "uv_size": [0.8, 2.8]},
+								"west": {"uv": [19.1, 22.1], "uv_size": [0.8, 2.8]}
+							}
+						}
+					]
+				},
+				{
+					"name": "LeftBall",
+					"parent": "LeftEye",
+					"pivot": [1, 4.375, -6.125],
+					"cubes": [
+						{
+							"origin": [0.25, 3.5, -7],
+							"size": [1.5, 1.75, 1.75],
+							"uv": {
+								"north": {"uv": [22.1, 0.1], "uv_size": [1.8, 1.8]},
+								"east": {"uv": [22.1, 2.1], "uv_size": [1.8, 1.8]},
+								"south": {"uv": [22.1, 4.1], "uv_size": [1.8, 1.8]},
+								"west": {"uv": [22.1, 6.1], "uv_size": [1.8, 1.8]},
+								"up": {"uv": [8.1, 22.1], "uv_size": [1.8, 1.8]},
+								"down": {"uv": [22.1, 9.9], "uv_size": [1.8, -1.8]}
+							}
+						}
+					]
+				},
+				{
+					"name": "LeftEyebrows",
+					"parent": "LeftBall",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "UpperLeftEyebrow",
+					"parent": "LeftEyebrows",
+					"pivot": [1, 5.2, -7.05],
+					"cubes": [
+						{
+							"origin": [0.25, 5.15, -7.1],
+							"size": [1.5, 0.1, 0],
+							"uv": {
+								"north": {"uv": [24.1, 4.1], "uv_size": [1.8, 0.8]},
+								"south": {"uv": [24.1, 5.1], "uv_size": [1.8, 0.8]}
+							}
+						}
+					]
+				},
+				{
+					"name": "LowerLeftEyebrow",
+					"parent": "LeftEyebrows",
+					"pivot": [1, 3.55, -7.05],
+					"cubes": [
+						{
+							"origin": [0.25, 3.5, -7.1],
+							"size": [1.5, 0.1, 0],
+							"uv": {
+								"north": {"uv": [24.1, 6.1], "uv_size": [1.8, 0.8]},
+								"south": {"uv": [24.1, 7.1], "uv_size": [1.8, 0.8]}
+							}
+						}
+					]
+				},
+				{
+					"name": "LeftEyebrowOutline",
+					"parent": "LeftEyebrows",
+					"pivot": [2, 0, 0],
+					"cubes": [
+						{
+							"origin": [0.25, 5.25, -7.1],
+							"size": [1.5, 0, 0.1],
+							"uv": {
+								"up": {"uv": [14.1, 24.1], "uv_size": [1.8, 0.8]},
+								"down": {"uv": [24.1, 14.9], "uv_size": [1.8, -0.8]}
+							}
+						},
+						{
+							"origin": [0.25, 3.5, -7.1],
+							"size": [1.5, 0, 0.1],
+							"uv": {
+								"up": {"uv": [24.1, 15.1], "uv_size": [1.8, 0.8]},
+								"down": {"uv": [24.1, 16.9], "uv_size": [1.8, -0.8]}
+							}
+						},
+						{
+							"origin": [1.75, 3.5, -7.1],
+							"size": [0, 1.75, 0.1],
+							"uv": {
+								"east": {"uv": [24.1, 17.1], "uv_size": [0.8, 1.8]},
+								"west": {"uv": [24.1, 19.1], "uv_size": [0.8, 1.8]}
+							}
+						},
+						{
+							"origin": [-1.25, 3.5, -5.1],
+							"size": [0.1, 1.75, 0],
+							"pivot": [0.5, 3.5, -5.35],
+							"rotation": [0, -90, 0],
+							"uv": {
+								"north": {"uv": [24.1, 21.1], "uv_size": [0.8, 1.8]},
+								"south": {"uv": [24.1, 23.1], "uv_size": [0.8, 1.8]}
+							}
+						}
+					]
+				},
+				{
+					"name": "RightEye",
+					"parent": "Eyes",
+					"pivot": [0, 8, 0]
+				},
+				{
+					"name": "RightAntenna",
+					"parent": "RightEye",
+					"pivot": [-0.1, 1.75, -6.5],
+					"cubes": [
+						{
+							"origin": [-1.1, 1.75, -5.5],
+							"size": [0.25, 2.5, 0.25],
+							"pivot": [-0.1, 1.75, -6.5],
+							"rotation": [22.5, 0, 0],
+							"uv": {
+								"north": {"uv": [20.1, 22.1], "uv_size": [0.8, 2.8]},
+								"east": {"uv": [21.1, 22.1], "uv_size": [0.8, 2.8]},
+								"south": {"uv": [22.1, 22.1], "uv_size": [0.8, 2.8]},
+								"west": {"uv": [23.1, 22.1], "uv_size": [0.8, 2.8]}
+							}
+						}
+					]
+				},
+				{
+					"name": "RightBall",
+					"parent": "RightEye",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-1.75, 3.5, -7],
+							"size": [1.5, 1.75, 1.75],
+							"uv": {
+								"north": {"uv": [10.1, 22.1], "uv_size": [1.8, 1.8]},
+								"east": {"uv": [22.1, 10.1], "uv_size": [1.8, 1.8]},
+								"south": {"uv": [12.1, 22.1], "uv_size": [1.8, 1.8]},
+								"west": {"uv": [22.1, 12.1], "uv_size": [1.8, 1.8]},
+								"up": {"uv": [14.1, 22.1], "uv_size": [1.8, 1.8]},
+								"down": {"uv": [22.1, 15.9], "uv_size": [1.8, -1.8]}
+							}
+						}
+					]
+				},
+				{
+					"name": "RightEyebrows",
+					"parent": "RightBall",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "UpperRightEyebrow",
+					"parent": "RightEyebrows",
+					"pivot": [-1, 5.2, -7.05],
+					"cubes": [
+						{
+							"origin": [-1.75, 5.15, -7.1],
+							"size": [1.5, 0.1, 0],
+							"uv": {
+								"north": {"uv": [24.1, 0.1], "uv_size": [1.8, 0.8]},
+								"south": {"uv": [24.1, 1.1], "uv_size": [1.8, 0.8]}
+							}
+						}
+					]
+				},
+				{
+					"name": "LowerRightEyebrow",
+					"parent": "RightEyebrows",
+					"pivot": [-1, 3.55, -7.05],
+					"cubes": [
+						{
+							"origin": [-1.75, 3.5, -7.1],
+							"size": [1.5, 0.1, 0],
+							"uv": {
+								"north": {"uv": [24.1, 2.1], "uv_size": [1.8, 0.8]},
+								"south": {"uv": [24.1, 3.1], "uv_size": [1.8, 0.8]}
+							}
+						}
+					]
+				},
+				{
+					"name": "RightEyebrowOutline",
+					"parent": "RightEyebrows",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-1.75, 5.25, -7.1],
+							"size": [1.5, 0, 0.1],
+							"uv": {
+								"up": {"uv": [8.1, 24.1], "uv_size": [1.8, 0.8]},
+								"down": {"uv": [24.1, 8.9], "uv_size": [1.8, -0.8]}
+							}
+						},
+						{
+							"origin": [-1.75, 3.5, -7.1],
+							"size": [1.5, 0, 0.1],
+							"uv": {
+								"up": {"uv": [24.1, 9.1], "uv_size": [1.8, 0.8]},
+								"down": {"uv": [10.1, 24.9], "uv_size": [1.8, -0.8]}
+							}
+						},
+						{
+							"origin": [-0.25, 3.5, -7.1],
+							"size": [0, 1.75, 0.1],
+							"uv": {
+								"east": {"uv": [24.1, 10.1], "uv_size": [0.8, 1.8]},
+								"west": {"uv": [12.1, 24.1], "uv_size": [0.8, 1.8]}
+							}
+						},
+						{
+							"origin": [-3.25, 3.5, -5.1],
+							"size": [0.1, 1.75, 0],
+							"pivot": [-1.5, 3.5, -5.35],
+							"rotation": [0, -90, 0],
+							"uv": {
+								"north": {"uv": [24.1, 12.1], "uv_size": [0.8, 1.8]},
+								"south": {"uv": [13.1, 24.1], "uv_size": [0.8, 1.8]}
+							}
+						}
+					]
+				},
+				{
+					"name": "Shell",
+					"parent": "Body",
+					"pivot": [0, 8, 0],
+					"cubes": [
+						{
+							"origin": [-3.5, 0.75, -4],
+							"size": [7, 7.5, 8],
+							"uv": {
+								"north": {"uv": [8.1, 0.1], "uv_size": [6.8, 7.8]},
+								"east": {"uv": [0.1, 0.1], "uv_size": [7.8, 7.8]},
+								"south": {"uv": [8.1, 8.1], "uv_size": [6.8, 7.8]},
+								"west": {"uv": [0.1, 8.1], "uv_size": [7.8, 7.8]},
+								"up": {"uv": [15.1, 0.1], "uv_size": [6.8, 7.8]},
+								"down": {"uv": [15.1, 15.9], "uv_size": [6.8, -7.8]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

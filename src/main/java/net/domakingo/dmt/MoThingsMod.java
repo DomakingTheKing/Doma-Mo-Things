@@ -2,8 +2,11 @@ package net.domakingo.dmt;
 
 import com.mojang.logging.LogUtils;
 import net.domakingo.dmt.block.ModBlocks;
+import net.domakingo.dmt.entity.ModEntities;
+import net.domakingo.dmt.entity.client.SnailRenderer;
 import net.domakingo.dmt.item.ModItems;
 import net.domakingo.dmt.item.dmtCreativeModTabs;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -15,6 +18,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import software.bernie.geckolib.GeckoLib;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(MoThingsMod.MOD_ID)
@@ -29,6 +33,9 @@ public class MoThingsMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModEntities.register(modEventBus);
+
+        GeckoLib.initialize();
 
         modEventBus.addListener(this::commonSetup);
 
@@ -55,7 +62,7 @@ public class MoThingsMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            EntityRenderers.register(ModEntities.SNAIL.get(), SnailRenderer::new);
         }
     }
 }
