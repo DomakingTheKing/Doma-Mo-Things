@@ -22,7 +22,7 @@ public class SnailRenderer extends GeoEntityRenderer<SnailEntity> {
     @Override
     public void render(SnailEntity entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
         if(entity.isBaby()) {
-            poseStack.scale(0.4f, 0.4f, 0.4f);
+            poseStack.scale(0.5f, 0.5f, 0.5f);
         }
 
         super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);

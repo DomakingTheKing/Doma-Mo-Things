@@ -30,12 +30,37 @@ public class SnailModel extends GeoModel<SnailEntity> {
     @Override
     public void setCustomAnimations(SnailEntity animatable, long instanceId, AnimationState<SnailEntity> animationState) {
         CoreGeoBone eyes = getAnimationProcessor().getBone("Eyes");
+        CoreGeoBone leftEye = getAnimationProcessor().getBone("LeftBall");
+        CoreGeoBone rightEye = getAnimationProcessor().getBone("RightBall");
 
         if (eyes != null) {
             EntityModelData entityData = animationState.getData(DataTickets.ENTITY_MODEL_DATA);
 
-            eyes.setRotX((entityData.headPitch() * Mth.DEG_TO_RAD));
-            eyes.setRotY((entityData.netHeadYaw() * Mth.DEG_TO_RAD));
+            // Calculate base rotations based on head pitch
+            float baseRotY = entityData.headPitch() * Mth.DEG_TO_RAD;
+            float baseRotX = entityData.headPitch() * Mth.DEG_TO_RAD;
+
+            // Apply capping limits
+            float MAX_ROT_UP = 90.0f; // Maximum rotation upwards (in degrees)
+            float MAX_ROT_DOWN = 40.0f; // Maximum rotation downwards (in degrees)
+            float MAX_ROT_X = 50.0f;    // Maximum rotation left/right (in degrees)
+
+            // Capped rotations for left eye
+            float cappedRotY = Math.max(-MAX_ROT_DOWN, Math.min(MAX_ROT_UP, baseRotY));
+            float cappedRotX = Math.max(-MAX_ROT_X, Math.min(MAX_ROT_X, baseRotX));
+
+            // Set rotations with capping
+            leftEye.setPivotX(1f);
+            leftEye.setPivotY(4.375f);
+            leftEye.setPivotZ(-6.125f);
+            leftEye.setRotY(cappedRotY);
+            leftEye.setRotX(cappedRotX);
+
+            rightEye.setPivotX(1f);
+            rightEye.setPivotY(4.375f);
+            rightEye.setPivotZ(-6.125f);
+            rightEye.setRotY(cappedRotY);
+            rightEye.setRotX(cappedRotX);
         }
     }
 }

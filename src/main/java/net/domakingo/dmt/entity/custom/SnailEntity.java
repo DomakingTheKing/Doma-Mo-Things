@@ -62,6 +62,7 @@ public class SnailEntity extends Animal implements GeoEntity {
     private PlayState predicate(AnimationState<SnailEntity> snailEntityAnimationState) {
         if(snailEntityAnimationState.isMoving()) {
             snailEntityAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.snail.walk", Animation.LoopType.LOOP));
+            System.out.println("camminando");
             return PlayState.CONTINUE;
         }
 

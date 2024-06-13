@@ -13,7 +13,7 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MoThingsMod.MOD_ID);
 
-    public static final RegistryObject<Item> SNAIL_SPAWN_EGG = ITEMS.register("tiger_spawn_egg",
+    public static final RegistryObject<Item> SNAIL_SPAWN_EGG = ITEMS.register("snail_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.SNAIL, 0x725563, 0xa3ad54, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {

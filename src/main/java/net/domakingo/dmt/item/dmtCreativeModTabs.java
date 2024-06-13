@@ -20,6 +20,8 @@ public class dmtCreativeModTabs {
                     .title(Component.translatable("creativetab.dmt_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.HOPE_FLOWER.get());
+
+                        pOutput.accept(ModItems.SNAIL_SPAWN_EGG.get());
                     })
                     .build());
 
