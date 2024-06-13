@@ -33,7 +33,7 @@ public class SnailEntity extends Animal implements GeoEntity {
         return Animal.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 10)
                 .add(Attributes.MOVEMENT_SPEED, 0.1f)
-                .add(Attributes.KNOCKBACK_RESISTANCE, 10f)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 1.5f)
                 .add(Attributes.ATTACK_DAMAGE, 0.5f)
                 .add(Attributes.ATTACK_SPEED, 0.2f)
                 .add(Attributes.ATTACK_KNOCKBACK, 0).build();
@@ -44,8 +44,6 @@ public class SnailEntity extends Animal implements GeoEntity {
         this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, 5));
         this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1.00));
-
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Silverfish.class, true));
     }
 
     @Nullable
@@ -62,7 +60,6 @@ public class SnailEntity extends Animal implements GeoEntity {
     private PlayState predicate(AnimationState<SnailEntity> snailEntityAnimationState) {
         if(snailEntityAnimationState.isMoving()) {
             snailEntityAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.snail.walk", Animation.LoopType.LOOP));
-            System.out.println("camminando");
             return PlayState.CONTINUE;
         }
 
