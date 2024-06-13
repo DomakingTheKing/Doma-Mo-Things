@@ -1,9 +1,10 @@
 {
   "block.dmt.hope_flower": "Hope Flower",
+  "block.dmt.snail_shell_block": "Snail Shell Block",
 
   "item.dmt.snail_spawn_egg": "Snail Spawn Egg",
-  "item.dmt.shell": "Snail Shell",
-  "item.dmt.horn_shell": "Horn of Snail Shell",
+  "item.dmt.snail_shell_fragment": "Snail Shell Fragment",
+  "item.dmt.horn_shell": "Snail Shell Horn",
 
 
   "creativetab.dmt_tab": "Doma's More Things Tab"

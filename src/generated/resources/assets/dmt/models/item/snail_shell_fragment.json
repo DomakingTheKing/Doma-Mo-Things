@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "dmt:item/shell"
+    "layer0": "dmt:item/snail_shell_fragment"
   }
 }

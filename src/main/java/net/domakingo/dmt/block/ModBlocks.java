@@ -22,6 +22,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> HOPE_FLOWER = registerBlock("hope_flower",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)));
 
+    public static final RegistryObject<Block> SNAIL_SHELL_BLOCK = registerBlock("snail_shell_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DECORATED_POT)));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
