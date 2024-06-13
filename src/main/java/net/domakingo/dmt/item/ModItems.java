@@ -15,6 +15,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> SNAIL_SPAWN_EGG = ITEMS.register("snail_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.SNAIL, 0x725563, 0xa3ad54, new Item.Properties()));
+    public static final RegistryObject<Item> SHELL = ITEMS.register("shell",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> HORN_SHELL = ITEMS.register("horn_shell",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

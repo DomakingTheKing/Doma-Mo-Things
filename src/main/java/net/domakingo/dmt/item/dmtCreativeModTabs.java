@@ -22,6 +22,9 @@ public class dmtCreativeModTabs {
                         pOutput.accept(ModBlocks.HOPE_FLOWER.get());
 
                         pOutput.accept(ModItems.SNAIL_SPAWN_EGG.get());
+                        pOutput.accept(ModItems.SHELL.get());
+                        pOutput.accept(ModItems.HORN_SHELL.get());
+
                     })
                     .build());
 
