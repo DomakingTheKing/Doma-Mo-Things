@@ -1,6 +1,8 @@
 package net.domakingo.dmt.block;
 
 import net.domakingo.dmt.MoThingsMod;
+import net.domakingo.dmt.block.custom.OpenedSnailShellBlock;
+import net.domakingo.dmt.block.custom.SnailShellBlock;
 import net.domakingo.dmt.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -23,7 +25,10 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY)));
 
     public static final RegistryObject<Block> SNAIL_SHELL_BLOCK = registerBlock("snail_shell_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DECORATED_POT)));
+            () -> new SnailShellBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT)));
+
+    public static final RegistryObject<Block> OPENED_SNAIL_SHELL_BLOCK = registerBlock("opened_snail_shell_block",
+            () -> new OpenedSnailShellBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT)));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
