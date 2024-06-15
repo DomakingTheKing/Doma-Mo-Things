@@ -4,6 +4,8 @@ import net.domakingo.dmt.block.ModBlocks;
 import net.domakingo.dmt.entity.ModEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
@@ -17,6 +19,7 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Silverfish;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BlockTypes;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -82,11 +85,15 @@ public class SnailEntity extends Animal implements GeoEntity {
     public void aiStep() {
         super.aiStep();
         if(!this.level().isClientSide) {
+            if (this.level().getBiome(this.blockPosition()).is(BiomeTags.SNOW_GOLEM_MELTS)) {
+                this.hurt(this.damageSources().onFire(), 1.0F);
+            }
+
             BlockState blockstate = ModBlocks.SNAIL_SLIME_BLOCK.get().defaultBlockState();
 
-            int j = Mth.floor(this.getX() + (double)((float)(1) * 0.25F));
+            int j = Mth.floor(this.getX() + 0.25D);
             int k = Mth.floor(this.getY());
-            int l = Mth.floor(this.getZ() + (double)((float)(1) * 0.25F));
+            int l = Mth.floor(this.getZ() + 0.25D);
             BlockPos blockpos = new BlockPos(j, k, l);
             if (this.level().isEmptyBlock(blockpos) && blockstate.canSurvive(this.level(), blockpos)) {
                 this.level().setBlockAndUpdate(blockpos, blockstate);
