@@ -1,6 +1,7 @@
 package net.domakingo.dmt.entity.custom;
 
 import net.domakingo.dmt.MoThingsMod;
+import net.domakingo.dmt.datagen.ModItemTagGenerator;
 import net.domakingo.dmt.entity.ModEntities;
 import net.domakingo.dmt.item.ModItems;
 import net.minecraft.nbt.CompoundTag;
@@ -21,8 +22,10 @@ import net.minecraft.world.entity.monster.Silverfish;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
@@ -85,8 +88,10 @@ public class SnailEntity extends Animal implements GeoEntity {
 
     @Override
     public InteractionResult mobInteract(Player pPlayer, InteractionHand pHand) {
+        ItemStack a= pPlayer.getItemInHand(pHand);
         if (pPlayer.getItemInHand(pHand).is(Items.BUCKET)) {
-            pPlayer.setItemInHand(pHand, new ItemStack(ModItems.DROOL_BUCKET.get(),1));
+            ItemStack b=ItemUtils.createFilledResult(a, pPlayer, ModItems.DROOL_BUCKET.get().getDefaultInstance());
+            pPlayer.setItemInHand(pHand, b);
         }
         return super.mobInteract(pPlayer, pHand);
     }

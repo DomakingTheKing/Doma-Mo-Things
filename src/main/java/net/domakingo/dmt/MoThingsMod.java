@@ -4,8 +4,12 @@ import com.mojang.logging.LogUtils;
 import net.domakingo.dmt.block.ModBlocks;
 import net.domakingo.dmt.entity.ModEntities;
 import net.domakingo.dmt.entity.client.SnailRenderer;
+import net.domakingo.dmt.fluid.ModFluidTypes;
+import net.domakingo.dmt.fluid.ModFluids;
 import net.domakingo.dmt.item.ModItems;
 import net.domakingo.dmt.item.dmtCreativeModTabs;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -35,6 +39,9 @@ public class MoThingsMod {
         ModBlocks.register(modEventBus);
         ModEntities.register(modEventBus);
 
+        ModFluids.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
+
         GeckoLib.initialize();
 
         modEventBus.addListener(this::commonSetup);
@@ -63,6 +70,9 @@ public class MoThingsMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntities.SNAIL.get(), SnailRenderer::new);
+
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_SOAP_WATER.get(), RenderType.solid());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(), RenderType.solid());
         }
     }
 }

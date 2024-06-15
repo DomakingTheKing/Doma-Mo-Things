@@ -24,5 +24,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.SNAIL_SHELL_FRAGMENT.get())
                 .unlockedBy(getHasName(ModItems.SNAIL_SHELL_FRAGMENT.get()), has(ModItems.SNAIL_SHELL_FRAGMENT.get()))
                 .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.HORN_SHELL.get())
+                .pattern("SZS")
+                .pattern("TST")
+                .pattern("SZS")
+                .define('S', ModItems.SNAIL_SHELL_FRAGMENT.get())
+                .define('T', Items.STRING)
+                .define('Z', Items.STICK)
+                .unlockedBy(getHasName(ModItems.SNAIL_SHELL_FRAGMENT.get()), has(ModItems.SNAIL_SHELL_FRAGMENT.get()))
+                .unlockedBy(getHasName(Items.STRING), has(Items.STRING))
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .save(recipeOutput);
     }
 }
