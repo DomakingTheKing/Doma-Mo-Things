@@ -1,5 +1,10 @@
 package net.domakingo.dmt.entity.custom;
 
+import net.domakingo.dmt.block.ModBlocks;
+import net.domakingo.dmt.entity.ModEntities;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Mth;
 import net.domakingo.dmt.MoThingsMod;
 import net.domakingo.dmt.datagen.ModItemTagGenerator;
 import net.domakingo.dmt.entity.ModEntities;
@@ -26,6 +31,9 @@ import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.Tags;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
@@ -85,6 +93,22 @@ public class SnailEntity extends Animal implements GeoEntity {
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
     }
+
+    @Override
+    public void aiStep() {
+        super.aiStep();
+        if(!this.level().isClientSide) {
+            BlockState blockstate = ModBlocks.SNAIL_SLIME_BLOCK.get().defaultBlockState();
+
+            int j = Mth.floor(this.getX() + (double)((float)(1) * 0.25F));
+            int k = Mth.floor(this.getY());
+            int l = Mth.floor(this.getZ() + (double)((float)(1) * 0.25F));
+            BlockPos blockpos = new BlockPos(j, k, l);
+            if (this.level().isEmptyBlock(blockpos) && blockstate.canSurvive(this.level(), blockpos)) {
+                this.level().setBlockAndUpdate(blockpos, blockstate);
+                this.level().gameEvent(GameEvent.BLOCK_PLACE, blockpos, GameEvent.Context.of(this, blockstate));
+            }
+        }
 
     @Override
     public InteractionResult mobInteract(Player pPlayer, InteractionHand pHand) {
