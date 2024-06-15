@@ -1,6 +1,7 @@
 {
   "block.dmt.hope_flower": "Hope Flower",
   "block.dmt.snail_shell_block": "Snail Shell Block",
+  "block.dmt.opened_snail_shell_block": "Opened Snail Shell Block",
 
   "item.dmt.snail_spawn_egg": "Snail Spawn Egg",
   "item.dmt.snail_shell_fragment": "Snail Shell Fragment",
