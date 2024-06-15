@@ -21,6 +21,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.SNAIL_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         simpleItem(ModItems.SNAIL_SHELL_FRAGMENT);
         simpleItem(ModItems.HORN_SHELL);
+        simpleItem(ModItems.DROOL_BUCKET);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
