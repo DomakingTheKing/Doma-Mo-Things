@@ -97,7 +97,7 @@ public class SnailEntity extends Animal implements GeoEntity {
     @Override
     public void aiStep() {
         super.aiStep();
-        if(!this.level().isClientSide) {
+        if (!this.level().isClientSide) {
             if (this.level().getBiome(this.blockPosition()).is(BiomeTags.SNOW_GOLEM_MELTS)) {
                 this.hurt(this.damageSources().onFire(), 1.0F);
             }
@@ -113,8 +113,9 @@ public class SnailEntity extends Animal implements GeoEntity {
                 this.level().gameEvent(GameEvent.BLOCK_PLACE, blockpos, GameEvent.Context.of(this, blockstate));
             }
         }
+    }
 
-    @Override  
+    @Override
     public InteractionResult mobInteract(Player pPlayer, InteractionHand pHand) {
         if (pPlayer.getItemInHand(pHand).is(Items.BUCKET)) {
             pPlayer.setItemInHand(pHand, new ItemStack(ModItems.DROOL_BUCKET.get(),1));
