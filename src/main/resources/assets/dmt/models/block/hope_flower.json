@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Blockbench by Domakingo",
 	"parent": "dmt:block/hope_flower",
+	"render_type": "cutout",
 	"textures": {
 		"0": "dmt:block/hope_flower",
 		"particle": "dmt:block/hope_flower"
