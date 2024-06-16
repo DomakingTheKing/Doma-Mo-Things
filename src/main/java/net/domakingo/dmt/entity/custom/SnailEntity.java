@@ -80,7 +80,7 @@ public class SnailEntity extends Animal implements GeoEntity {
     }
 
     private PlayState predicate(AnimationState<SnailEntity> snailEntityAnimationState) {
-        if(snailEntityAnimationState.isMoving()) {
+        if (snailEntityAnimationState.isMoving()) {
             snailEntityAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.snail.walk", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
@@ -97,24 +97,25 @@ public class SnailEntity extends Animal implements GeoEntity {
     @Override
     public void aiStep() {
         super.aiStep();
-        if(!this.level().isClientSide) {
+        if (!this.level().isClientSide) {
             BlockState blockstate = ModBlocks.SNAIL_SLIME_BLOCK.get().defaultBlockState();
 
-            int j = Mth.floor(this.getX() + (double)((float)(1) * 0.25F));
+            int j = Mth.floor(this.getX() + (double) ((float) (1) * 0.25F));
             int k = Mth.floor(this.getY());
-            int l = Mth.floor(this.getZ() + (double)((float)(1) * 0.25F));
+            int l = Mth.floor(this.getZ() + (double) ((float) (1) * 0.25F));
             BlockPos blockpos = new BlockPos(j, k, l);
             if (this.level().isEmptyBlock(blockpos) && blockstate.canSurvive(this.level(), blockpos)) {
                 this.level().setBlockAndUpdate(blockpos, blockstate);
                 this.level().gameEvent(GameEvent.BLOCK_PLACE, blockpos, GameEvent.Context.of(this, blockstate));
             }
         }
+    }
 
     @Override
     public InteractionResult mobInteract(Player pPlayer, InteractionHand pHand) {
-        ItemStack a= pPlayer.getItemInHand(pHand);
+        ItemStack a = pPlayer.getItemInHand(pHand);
         if (pPlayer.getItemInHand(pHand).is(Items.BUCKET)) {
-            ItemStack b=ItemUtils.createFilledResult(a, pPlayer, ModItems.DROOL_BUCKET.get().getDefaultInstance());
+            ItemStack b = ItemUtils.createFilledResult(a, pPlayer, ModItems.DROOL_BUCKET.get().getDefaultInstance());
             pPlayer.setItemInHand(pHand, b);
         }
         return super.mobInteract(pPlayer, pHand);

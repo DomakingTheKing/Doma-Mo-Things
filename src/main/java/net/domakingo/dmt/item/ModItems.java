@@ -4,6 +4,7 @@ import net.domakingo.dmt.MoThingsMod;
 import net.domakingo.dmt.entity.ModEntities;
 import net.domakingo.dmt.fluid.ModFluids;
 import net.domakingo.dmt.item.custom.HornItem;
+import net.domakingo.dmt.item.custom.ScoopItem;
 import net.minecraft.tags.InstrumentTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BucketItem;
@@ -25,13 +26,21 @@ public class ModItems {
 
     public static final RegistryObject<Item> SNAIL_SPAWN_EGG = ITEMS.register("snail_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.SNAIL, 0x725563, 0xa3ad54, new Item.Properties()));
+
     public static final RegistryObject<Item> SNAIL_SHELL_FRAGMENT = ITEMS.register("snail_shell_fragment",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> DROOL_BUCKET= ITEMS.register("drool_bucket",
             () -> new BucketItem(ModFluids.SOURCE_SOAP_WATER, new BucketItem.Properties()));
+
     public static final RegistryObject<Item> HORN_SHELL = ITEMS.register("horn_shell",
             () -> new HornItem(new Item.Properties(), InstrumentTags.GOAT_HORNS));
+
+    public static final RegistryObject<Item> SNAIL_SLIME = ITEMS.register("snail_slime",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> SCOOP = ITEMS.register("scoop",
+            () -> new ScoopItem(new Item.Properties().durability(10)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

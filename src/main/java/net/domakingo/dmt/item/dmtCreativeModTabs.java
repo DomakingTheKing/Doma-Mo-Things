@@ -27,6 +27,8 @@ public class dmtCreativeModTabs {
                         pOutput.accept(ModItems.SNAIL_SHELL_FRAGMENT.get());
                         pOutput.accept(ModItems.HORN_SHELL.get());
                         pOutput.accept(ModItems.DROOL_BUCKET.get());
+                        pOutput.accept(ModItems.SNAIL_SLIME.get());
+                        pOutput.accept(ModItems.SCOOP.get());
 
                     })
                     .build());

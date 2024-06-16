@@ -18,6 +18,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
         this.dropSelf(ModBlocks.SNAIL_SHELL_BLOCK.get());
         this.dropSelf(ModBlocks.OPENED_SNAIL_SHELL_BLOCK.get());
+        this.dropSelf(ModBlocks.SNAIL_SLIME_BLOCK.get());
 
         this.dropSelf(ModBlocks.HOPE_FLOWER.get());
     }
