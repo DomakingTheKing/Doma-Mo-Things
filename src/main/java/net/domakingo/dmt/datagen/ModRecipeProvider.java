@@ -36,5 +36,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.STRING), has(Items.STRING))
                 .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
                 .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.SCOOP.get())
+                .pattern("   ")
+                .pattern(" I ")
+                .pattern("Z  ")
+                .define('I', Items.IRON_INGOT)
+                .define('Z', Items.STICK)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .save(recipeOutput);
     }
 }

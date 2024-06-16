@@ -24,6 +24,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.DROOL_BUCKET);
         simpleItem(ModItems.SNAIL_SLIME);
         simpleItem(ModItems.SCOOP);
+        simpleItem(ModItems.SNAIL_GLUE);
+        simpleItem(ModItems.SNAIL_SLIME_SOUP);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

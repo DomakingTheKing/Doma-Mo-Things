@@ -40,7 +40,13 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> SCOOP = ITEMS.register("scoop",
-            () -> new ScoopItem(new Item.Properties().durability(10)));
+            () -> new ScoopItem(new Item.Properties().durability(50)));
+
+    public static final RegistryObject<Item> SNAIL_GLUE = ITEMS.register("snail_glue",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> SNAIL_SLIME_SOUP = ITEMS.register("snail_slime_soup",
+            () -> new Item(new Item.Properties().food(ModFoods.SNAIL_SLIME_SOUP)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
