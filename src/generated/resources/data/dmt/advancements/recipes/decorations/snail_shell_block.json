@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_diamond": {
+    "has_snail_shell_fragment": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:diamond"
+              "dmt:snail_shell_fragment"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dmt:hope_flower"
+        "recipe": "dmt:snail_shell_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_diamond"
+      "has_snail_shell_fragment"
     ]
   ],
   "rewards": {
     "recipes": [
-      "dmt:hope_flower"
+      "dmt:snail_shell_block"
     ]
   }
 }

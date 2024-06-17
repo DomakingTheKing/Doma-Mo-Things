@@ -20,10 +20,13 @@ public class dmtCreativeModTabs {
                     .title(Component.translatable("creativetab.dmt_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.HOPE_FLOWER.get());
+                        pOutput.accept(ModBlocks.SNAIL_SHELL_BLOCK.get());
+                        pOutput.accept(ModBlocks.OPENED_SNAIL_SHELL_BLOCK.get());
 
                         pOutput.accept(ModItems.SNAIL_SPAWN_EGG.get());
-                        pOutput.accept(ModItems.SHELL.get());
+                        pOutput.accept(ModItems.SNAIL_SHELL_FRAGMENT.get());
                         pOutput.accept(ModItems.HORN_SHELL.get());
+                        pOutput.accept(ModItems.DROOL_BUCKET.get());
 
                     })
                     .build());

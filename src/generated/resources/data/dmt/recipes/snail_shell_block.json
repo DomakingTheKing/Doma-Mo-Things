@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "D": {
-      "item": "minecraft:diamond"
+    "S": {
+      "item": "dmt:snail_shell_fragment"
     }
   },
   "pattern": [
-    "DDD",
-    "DDD",
-    "DDD"
+    "SSS",
+    "SSS",
+    "SSS"
   ],
   "result": {
-    "item": "dmt:hope_flower"
+    "item": "dmt:snail_shell_block"
   }
 }
