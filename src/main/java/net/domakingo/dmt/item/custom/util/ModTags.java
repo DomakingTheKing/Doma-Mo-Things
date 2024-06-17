@@ -1,21 +1,22 @@
-/*
+
 package net.domakingo.dmt.item.custom.util;
 
 import net.domakingo.dmt.MoThingsMod;
-import net.minecraft.data.tags.InstrumentTagsProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.InstrumentTags;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Instrument;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
-
-public class ModsTag {
-
+public class ModTags {
     public static class Blocks {
+        public static final TagKey<Block> NEED_SNAIL_TOOL = tag("need_snail_tool");
 
 
+        private static TagKey<Block> tag(String name) {
+            return BlockTags.create(new ResourceLocation(MoThingsMod.MOD_ID, name));
+        }
     }
 
     public static class Items {
@@ -24,12 +25,4 @@ public class ModsTag {
             return ItemTags.create(new ResourceLocation(MoThingsMod.MOD_ID, name));
         }
     }
-
-    public static class Instruments {
-
-        private static TagKey<Instrument> tag(String name) {
-            return InstrumentTags.(new ResourceLocation(MoThingsMod.MOD_ID, name));
-        }
-    }
 }
- */

@@ -31,6 +31,7 @@ public class dmtCreativeModTabs {
                         pOutput.accept(ModItems.SCOOP.get());
                         pOutput.accept(ModItems.SNAIL_GLUE.get());
                         pOutput.accept(ModItems.SNAIL_SLIME_SOUP.get());
+                        pOutput.accept(ModItems.SNAIL_HAMMER.get());
 
                     })
                     .build());

@@ -26,6 +26,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.SCOOP);
         simpleItem(ModItems.SNAIL_GLUE);
         simpleItem(ModItems.SNAIL_SLIME_SOUP);
+        simpleItem(ModItems.SNAIL_HAMMER);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
