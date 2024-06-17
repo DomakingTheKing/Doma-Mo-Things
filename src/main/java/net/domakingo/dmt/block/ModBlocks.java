@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -37,7 +38,7 @@ public class ModBlocks {
             () -> new OpenedSnailShellBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT)));
 
     public static final RegistryObject<Block> SNAIL_SLIME_BLOCK = BLOCKS.register("snail_slime_block",
-            () -> new SnailSlimeBlock(BlockBehaviour.Properties.of().noCollission().noOcclusion()));
+            () -> new SnailSlimeBlock(BlockBehaviour.Properties.of().noCollission()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
