@@ -6,16 +6,14 @@ import net.domakingo.dmt.fluid.ModFluids;
 import net.domakingo.dmt.item.custom.HornItem;
 import net.domakingo.dmt.item.custom.ScoopItem;
 import net.minecraft.tags.InstrumentTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.*;
-import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.item.BucketItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
-import java.rmi.registry.Registry;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =

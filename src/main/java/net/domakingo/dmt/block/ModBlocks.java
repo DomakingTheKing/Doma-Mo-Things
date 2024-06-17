@@ -1,20 +1,18 @@
 package net.domakingo.dmt.block;
 
 import net.domakingo.dmt.MoThingsMod;
-import net.domakingo.dmt.fluid.ModFluids;
 import net.domakingo.dmt.block.custom.OpenedSnailShellBlock;
 import net.domakingo.dmt.block.custom.SnailShellBlock;
 import net.domakingo.dmt.block.custom.SnailSlimeBlock;
+import net.domakingo.dmt.fluid.ModFluids;
 import net.domakingo.dmt.item.ModItems;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.FlowerBlock;
-import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
