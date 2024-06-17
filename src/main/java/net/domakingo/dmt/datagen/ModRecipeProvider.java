@@ -24,5 +24,47 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.SNAIL_SHELL_FRAGMENT.get())
                 .unlockedBy(getHasName(ModItems.SNAIL_SHELL_FRAGMENT.get()), has(ModItems.SNAIL_SHELL_FRAGMENT.get()))
                 .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.HORN_SHELL.get())
+                .pattern("SZS")
+                .pattern("TST")
+                .pattern("SZS")
+                .define('S', ModItems.SNAIL_SHELL_FRAGMENT.get())
+                .define('T', Items.STRING)
+                .define('Z', Items.STICK)
+                .unlockedBy(getHasName(ModItems.SNAIL_SHELL_FRAGMENT.get()), has(ModItems.SNAIL_SHELL_FRAGMENT.get()))
+                .unlockedBy(getHasName(Items.STRING), has(Items.STRING))
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.SCOOP.get())
+                .pattern("   ")
+                .pattern(" I ")
+                .pattern("Z  ")
+                .define('I', Items.IRON_INGOT)
+                .define('Z', Items.STICK)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.SNAIL_SLIME_SOUP.get())
+                .pattern(" S ")
+                .pattern(" S ")
+                .pattern(" B ")
+                .define('B', Items.BOWL)
+                .define('S', ModItems.SNAIL_SLIME.get())
+                .unlockedBy(getHasName(Items.BOWL), has(Items.BOWL))
+                .unlockedBy(getHasName(ModItems.SNAIL_SLIME.get()), has(ModItems.SNAIL_SLIME.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.SNAIL_HAMMER.get())
+                .pattern(" B ")
+                .pattern(" S ")
+                .pattern(" S ")
+                .define('B', ModBlocks.SNAIL_SHELL_BLOCK.get())
+                .define('S', Items.STICK)
+                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .save(recipeOutput);
     }
 }

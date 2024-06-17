@@ -6,6 +6,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.Mth;
+import net.domakingo.dmt.MoThingsMod;
+import net.domakingo.dmt.datagen.ModItemTagGenerator;
+import net.domakingo.dmt.entity.ModEntities;
 import net.domakingo.dmt.item.ModItems;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -19,8 +22,11 @@ import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.Tags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
@@ -66,7 +72,7 @@ public class SnailEntity extends Animal implements GeoEntity {
     }
 
     private PlayState predicate(AnimationState<SnailEntity> snailEntityAnimationState) {
-        if(snailEntityAnimationState.isMoving()) {
+        if (snailEntityAnimationState.isMoving()) {
             snailEntityAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.snail.walk", Animation.LoopType.LOOP));
             return PlayState.CONTINUE;
         }
@@ -93,6 +99,7 @@ public class SnailEntity extends Animal implements GeoEntity {
             int j = Mth.floor(this.getX() + 0.25D);
             int k = Mth.floor(this.getY());
             int l = Mth.floor(this.getZ() + 0.25D);
+
             BlockPos blockpos = new BlockPos(j, k, l);
             if (this.level().isEmptyBlock(blockpos) && blockstate.canSurvive(this.level(), blockpos)) {
                 this.level().setBlockAndUpdate(blockpos, blockstate);
@@ -103,8 +110,10 @@ public class SnailEntity extends Animal implements GeoEntity {
 
     @Override
     public InteractionResult mobInteract(Player pPlayer, InteractionHand pHand) {
+        ItemStack a = pPlayer.getItemInHand(pHand);
         if (pPlayer.getItemInHand(pHand).is(Items.BUCKET)) {
-            pPlayer.setItemInHand(pHand, new ItemStack(ModItems.DROOL_BUCKET.get(),1));
+            ItemStack b = ItemUtils.createFilledResult(a, pPlayer, ModItems.DROOL_BUCKET.get().getDefaultInstance());
+            pPlayer.setItemInHand(pHand, b);
         }
         return super.mobInteract(pPlayer, pHand);
     }

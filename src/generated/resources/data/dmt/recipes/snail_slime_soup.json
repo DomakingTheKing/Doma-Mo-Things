@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bowl"
+    },
+    "S": {
+      "item": "dmt:snail_slime"
+    }
+  },
+  "pattern": [
+    " S ",
+    " S ",
+    " B "
+  ],
+  "result": {
+    "item": "dmt:snail_slime_soup"
+  }
+}

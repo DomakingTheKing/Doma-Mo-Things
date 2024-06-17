@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "dmt:snail_shell_block"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " B ",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "item": "dmt:snail_hammer"
+  }
+}

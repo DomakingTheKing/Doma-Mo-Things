@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "dmt:snail_shell_fragment"
+    },
+    "T": {
+      "item": "minecraft:string"
+    },
+    "Z": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "SZS",
+    "TST",
+    "SZS"
+  ],
+  "result": {
+    "item": "dmt:horn_shell"
+  }
+}
