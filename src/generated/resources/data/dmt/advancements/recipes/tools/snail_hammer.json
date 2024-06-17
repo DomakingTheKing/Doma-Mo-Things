@@ -1,24 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bowl": {
+    "has_iron_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:bowl"
+              "minecraft:iron_ingot"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_snail_slime": {
+    "has_stick": {
       "conditions": {
         "items": [
           {
             "items": [
-              "dmt:snail_slime"
+              "minecraft:stick"
             ]
           }
         ]
@@ -27,7 +27,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "dmt:snail_slime_soup"
+        "recipe": "dmt:snail_hammer"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -35,13 +35,13 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_bowl",
-      "has_snail_slime"
+      "has_iron_ingot",
+      "has_stick"
     ]
   ],
   "rewards": {
     "recipes": [
-      "dmt:snail_slime_soup"
+      "dmt:snail_hammer"
     ]
   }
 }
