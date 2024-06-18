@@ -1,6 +1,7 @@
 package net.domakingo.dmt.item;
 
 import net.domakingo.dmt.MoThingsMod;
+import net.domakingo.dmt.block.custom.GemPolishingStationBlock;
 import net.domakingo.dmt.entity.ModEntities;
 import net.domakingo.dmt.fluid.ModFluids;
 import net.domakingo.dmt.item.custom.HornItem;
@@ -9,6 +10,8 @@ import net.minecraft.tags.InstrumentTags;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

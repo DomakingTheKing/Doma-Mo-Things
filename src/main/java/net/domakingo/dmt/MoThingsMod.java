@@ -2,12 +2,14 @@ package net.domakingo.dmt;
 
 import com.mojang.logging.LogUtils;
 import net.domakingo.dmt.block.ModBlocks;
+import net.domakingo.dmt.block.entity.ModBlockEntities;
 import net.domakingo.dmt.entity.ModEntities;
 import net.domakingo.dmt.entity.client.SnailRenderer;
 import net.domakingo.dmt.fluid.ModFluidTypes;
 import net.domakingo.dmt.fluid.ModFluids;
 import net.domakingo.dmt.item.ModItems;
 import net.domakingo.dmt.item.dmtCreativeModTabs;
+import net.domakingo.dmt.screen.ModMenuTypes;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -41,6 +43,10 @@ public class MoThingsMod {
 
         ModFluids.register(modEventBus);
         ModFluidTypes.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+
 
         GeckoLib.initialize();
 

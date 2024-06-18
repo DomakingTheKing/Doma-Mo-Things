@@ -22,6 +22,7 @@ public class dmtCreativeModTabs {
                         pOutput.accept(ModBlocks.HOPE_FLOWER.get());
                         pOutput.accept(ModBlocks.SNAIL_SHELL_BLOCK.get());
                         pOutput.accept(ModBlocks.OPENED_SNAIL_SHELL_BLOCK.get());
+                        pOutput.accept(ModBlocks.GEM_POLISHING_STATION.get());
 
                         pOutput.accept(ModItems.SNAIL_SPAWN_EGG.get());
                         pOutput.accept(ModItems.SNAIL_SHELL_FRAGMENT.get());
@@ -32,6 +33,7 @@ public class dmtCreativeModTabs {
                         pOutput.accept(ModItems.SNAIL_GLUE.get());
                         pOutput.accept(ModItems.SNAIL_SLIME_SOUP.get());
                         pOutput.accept(ModItems.SNAIL_HAMMER.get());
+
 
                     })
                     .build());

@@ -1,6 +1,7 @@
 package net.domakingo.dmt.block;
 
 import net.domakingo.dmt.MoThingsMod;
+import net.domakingo.dmt.block.custom.GemPolishingStationBlock;
 import net.domakingo.dmt.block.custom.OpenedSnailShellBlock;
 import net.domakingo.dmt.block.custom.SnailShellBlock;
 import net.domakingo.dmt.block.custom.SnailSlimeBlock;
@@ -38,6 +39,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> SNAIL_SLIME_BLOCK = BLOCKS.register("snail_slime_block",
             () -> new SnailSlimeBlock(BlockBehaviour.Properties.of().noCollission()));
 
+    public static final RegistryObject<Block> GEM_POLISHING_STATION = registerBlock("gem_polishing_station",
+            () -> new GemPolishingStationBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).noOcclusion()));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -48,6 +52,7 @@ public class ModBlocks {
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
+
 
     public static final RegistryObject<LiquidBlock> SOAP_WATER_BLOCK = BLOCKS.register("soap_water_block",
             () -> new LiquidBlock(ModFluids.SOURCE_SOAP_WATER, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
