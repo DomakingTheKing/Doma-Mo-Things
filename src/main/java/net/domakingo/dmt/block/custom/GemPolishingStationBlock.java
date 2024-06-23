@@ -4,6 +4,7 @@ import com.mojang.datafixers.types.templates.Hook;
 import com.mojang.serialization.MapCodec;
 import net.domakingo.dmt.block.entity.GemPolishingStationBlockEntity;
 import net.domakingo.dmt.block.entity.ModBlockEntities;
+import net.domakingo.dmt.screen.GemPolishingStationMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -67,8 +68,7 @@ public class GemPolishingStationBlock extends BaseEntityBlock {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
             if(entity instanceof GemPolishingStationBlockEntity) {
-                pPlayer.openMenu((MenuProvider)(GemPolishingStationBlockEntity)entity);
-                //NetworkHooks.openScreen(((ServerPlayer)pPlayer), (GemPolishingStationBlockEntity)entity, pPos);
+                pPlayer.openMenu(pState.getMenuProvider(pLevel, pPos));
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }

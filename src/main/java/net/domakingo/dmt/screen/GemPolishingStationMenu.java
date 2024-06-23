@@ -3,6 +3,7 @@ package net.domakingo.dmt.screen;
 import net.domakingo.dmt.block.ModBlocks;
 import net.domakingo.dmt.block.entity.GemPolishingStationBlockEntity;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;

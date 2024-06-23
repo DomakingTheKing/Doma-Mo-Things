@@ -47,7 +47,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().food(ModFoods.SNAIL_SLIME_SOUP)));
 
     public static final RegistryObject<Item> SNAIL_HAMMER = ITEMS.register("snail_hammer",
-            () -> new SwordItem(ModToolTiers.SNAIL, 4, 2, new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.SNAIL, 4, -3f, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

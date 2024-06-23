@@ -9,7 +9,10 @@ import net.domakingo.dmt.fluid.ModFluidTypes;
 import net.domakingo.dmt.fluid.ModFluids;
 import net.domakingo.dmt.item.ModItems;
 import net.domakingo.dmt.item.dmtCreativeModTabs;
+import net.domakingo.dmt.screen.GemPolishingStationMenu;
+import net.domakingo.dmt.screen.GemPolishingStationScreen;
 import net.domakingo.dmt.screen.ModMenuTypes;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -47,7 +50,6 @@ public class MoThingsMod {
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
 
-
         GeckoLib.initialize();
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -76,6 +78,8 @@ public class MoThingsMod {
 
             ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_SOAP_WATER.get(), RenderType.solid());
             ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(), RenderType.solid());
+
+            MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
         }
     }
 }
