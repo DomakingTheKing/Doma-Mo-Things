@@ -47,7 +47,6 @@ public class GemPolishingStationScreen extends AbstractContainerScreen<GemPolish
 
     @Override
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float delta) {
-        renderDirtBackground(guiGraphics);
         super.render(guiGraphics, mouseX, mouseY, delta);
         renderTooltip(guiGraphics, mouseX, mouseY);
     }

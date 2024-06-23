@@ -68,7 +68,8 @@ public class GemPolishingStationBlock extends BaseEntityBlock {
         if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
             if(entity instanceof GemPolishingStationBlockEntity) {
-                pPlayer.openMenu(pState.getMenuProvider(pLevel, pPos));
+                ServerPlayer serverPlayer = (ServerPlayer) pPlayer;
+                serverPlayer.openMenu((GemPolishingStationBlockEntity) entity, buf -> buf.writeBlockPos(pPos));
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
